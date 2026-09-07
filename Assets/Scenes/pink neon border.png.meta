@@ -1,0 +1,587 @@
+fileFormatVersion: 2
+guid: b3493aa2f1117274bb1636c16d580d7a
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 2748164113857939162
+    second: pink neon border_0
+  - first:
+      213: 699309010279040065
+    second: pink neon border_1
+  - first:
+      213: -8887434347914324892
+    second: pink neon border_2
+  - first:
+      213: 6295697783865270255
+    second: pink neon border_3
+  - first:
+      213: -7495728344352981577
+    second: pink neon border_4
+  - first:
+      213: -3804012802890165789
+    second: pink neon border_5
+  - first:
+      213: -3589595268918714071
+    second: pink neon border_6
+  - first:
+      213: -408593506714437505
+    second: pink neon border_7
+  - first:
+      213: -7445089755847995403
+    second: pink neon border_8
+  - first:
+      213: -4851908280365632269
+    second: pink neon border_9
+  - first:
+      213: -4428775179957785487
+    second: pink neon border_10
+  - first:
+      213: 7892763841722748191
+    second: pink neon border_11
+  - first:
+      213: 5921021389221670114
+    second: pink neon border_12
+  - first:
+      213: -3314438012556733386
+    second: pink neon border_13
+  - first:
+      213: -6456525819259438994
+    second: pink neon border_14
+  - first:
+      213: 4082339716406347080
+    second: pink neon border_15
+  - first:
+      213: -4656429354549335937
+    second: pink neon border_16
+  - first:
+      213: -3751721185489526830
+    second: pink neon border_17
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationMethod: 0
+  spriteTessellationDetail: -1
+  spriteGeometrySubdivision: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: pink neon border_0
+      rect:
+        serializedVersion: 2
+        x: 9
+        y: 56
+        width: 1756
+        height: 651
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ad68afe73b0732620800000000000000
+      internalID: 2748164113857939162
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pink neon border_1
+      rect:
+        serializedVersion: 2
+        x: 855
+        y: 569
+        width: 100
+        height: 153
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 14489e9f6d174b900800000000000000
+      internalID: 699309010279040065
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pink neon border_2
+      rect:
+        serializedVersion: 2
+        x: 1129
+        y: 525
+        width: 86
+        height: 198
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 46416f75c8d79a480800000000000000
+      internalID: -8887434347914324892
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pink neon border_3
+      rect:
+        serializedVersion: 2
+        x: 1272
+        y: 539
+        width: 7
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fefd08447cfce5750800000000000000
+      internalID: 6295697783865270255
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pink neon border_4
+      rect:
+        serializedVersion: 2
+        x: 685
+        y: 322
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7bd730ee8c2d9f790800000000000000
+      internalID: -7495728344352981577
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pink neon border_5
+      rect:
+        serializedVersion: 2
+        x: 1207
+        y: 330
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3e191b2a28e653bc0800000000000000
+      internalID: -3804012802890165789
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pink neon border_6
+      rect:
+        serializedVersion: 2
+        x: 1218
+        y: 330
+        width: 7
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9216da41f123f2ec0800000000000000
+      internalID: -3589595268918714071
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pink neon border_7
+      rect:
+        serializedVersion: 2
+        x: 1276
+        y: 319
+        width: 13
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f7831c6de52645af0800000000000000
+      internalID: -408593506714437505
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pink neon border_8
+      rect:
+        serializedVersion: 2
+        x: 441
+        y: 316
+        width: 8
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5ffc7c5105abda890800000000000000
+      internalID: -7445089755847995403
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pink neon border_9
+      rect:
+        serializedVersion: 2
+        x: 1193
+        y: 317
+        width: 10
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3f4b702202f8aacb0800000000000000
+      internalID: -4851908280365632269
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pink neon border_10
+      rect:
+        serializedVersion: 2
+        x: 1209
+        y: 323
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 17cac804074d982c0800000000000000
+      internalID: -4428775179957785487
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pink neon border_11
+      rect:
+        serializedVersion: 2
+        x: 1385
+        y: 305
+        width: 9
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f1d8ee975eab88d60800000000000000
+      internalID: 7892763841722748191
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pink neon border_12
+      rect:
+        serializedVersion: 2
+        x: 1457
+        y: 305
+        width: 10
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2ec2c042591bb2250800000000000000
+      internalID: 5921021389221670114
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pink neon border_13
+      rect:
+        serializedVersion: 2
+        x: 1062
+        y: 289
+        width: 32
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 634118f2030c002d0800000000000000
+      internalID: -3314438012556733386
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pink neon border_14
+      rect:
+        serializedVersion: 2
+        x: 1080
+        y: 305
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e6837ebb9ffc566a0800000000000000
+      internalID: -6456525819259438994
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pink neon border_15
+      rect:
+        serializedVersion: 2
+        x: 1191
+        y: 308
+        width: 6
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8458ed8c75267a830800000000000000
+      internalID: 4082339716406347080
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pink neon border_16
+      rect:
+        serializedVersion: 2
+        x: 1193
+        y: 305
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f78a2604c2a016fb0800000000000000
+      internalID: -4656429354549335937
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pink neon border_17
+      rect:
+        serializedVersion: 2
+        x: 1484
+        y: 304
+        width: 7
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2dfd69295753febc0800000000000000
+      internalID: -3751721185489526830
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      pink neon border_0: 2748164113857939162
+      pink neon border_1: 699309010279040065
+      pink neon border_10: -4428775179957785487
+      pink neon border_11: 7892763841722748191
+      pink neon border_12: 5921021389221670114
+      pink neon border_13: -3314438012556733386
+      pink neon border_14: -6456525819259438994
+      pink neon border_15: 4082339716406347080
+      pink neon border_16: -4656429354549335937
+      pink neon border_17: -3751721185489526830
+      pink neon border_2: -8887434347914324892
+      pink neon border_3: 6295697783865270255
+      pink neon border_4: -7495728344352981577
+      pink neon border_5: -3804012802890165789
+      pink neon border_6: -3589595268918714071
+      pink neon border_7: -408593506714437505
+      pink neon border_8: -7445089755847995403
+      pink neon border_9: -4851908280365632269
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

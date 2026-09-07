@@ -32,7 +32,16 @@ namespace Platformer.UI
         void OnEnable()
         {
             _ToggleMainMenu(showMainCanvas);
-            m_MenuAction = InputSystem.actions.FindAction("Player/Menu");
+
+            if (InputSystem.actions != null)
+            {
+                m_MenuAction = InputSystem.actions.FindAction("Player/Menu");
+            }
+
+            if (m_MenuAction == null)
+            {
+                Debug.LogWarning("MetaGameController: 'Player/Menu' action not found. Menu toggle via input will be disabled.");
+            }
         }
 
         /// <summary>
@@ -49,6 +58,12 @@ namespace Platformer.UI
 
         void _ToggleMainMenu(bool show)
         {
+            if (mainMenu == null)
+            {
+                Debug.LogWarning("MetaGameController: mainMenu is not assigned in the Inspector.");
+                return;
+            }
+
             if (show)
             {
                 Time.timeScale = 0;
@@ -66,7 +81,7 @@ namespace Platformer.UI
 
         void Update()
         {
-            if (m_MenuAction.WasPressedThisFrame())
+            if (m_MenuAction != null && m_MenuAction.WasPressedThisFrame())
             {
                 ToggleMainMenu(show: !showMainCanvas);
             }

@@ -1,176 +1,251 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 namespace Platformer.Mechanics
 {
-    /// <summary>
-    /// Implements game physics for some in game entity.
-    /// </summary>
     public class KinematicObject : MonoBehaviour
     {
-        /// <summary>
-        /// The minimum normal (dot product) considered suitable for the entity sit on.
-        /// </summary>
-        public float minGroundNormalY = .65f;
+        public float minGroundNormalY = 0.65f;
 
-        /// <summary>
-        /// A custom gravity coefficient applied to this entity.
-        /// </summary>
         public float gravityModifier = 1f;
 
-        /// <summary>
-        /// The current velocity of the entity.
-        /// </summary>
+        public float fallGravityMultiplier = 2f;
+
         public Vector2 velocity;
 
-        /// <summary>
-        /// Is the entity currently sitting on a surface?
-        /// </summary>
-        /// <value></value>
         public bool IsGrounded { get; private set; }
 
         protected Vector2 targetVelocity;
         protected Vector2 groundNormal;
         protected Rigidbody2D body;
         protected ContactFilter2D contactFilter;
-        protected RaycastHit2D[] hitBuffer = new RaycastHit2D[16];
 
-        protected const float minMoveDistance = 0.001f;
-        protected const float shellRadius = 0.01f;
+        protected RaycastHit2D[] hitBuffer =
+            new RaycastHit2D[16];
 
+        protected const float minMoveDistance =
+            0.001f;
 
-        /// <summary>
-        /// Bounce the object's vertical velocity.
-        /// </summary>
-        /// <param name="value"></param>
+        protected const float shellRadius =
+            0.01f;
+
         public void Bounce(float value)
         {
             velocity.y = value;
         }
 
-        /// <summary>
-        /// Bounce the objects velocity in a direction.
-        /// </summary>
-        /// <param name="dir"></param>
         public void Bounce(Vector2 dir)
         {
-            velocity.y = dir.y;
-            velocity.x = dir.x;
+            velocity = dir;
         }
 
-        /// <summary>
-        /// Teleport to some position.
-        /// </summary>
-        /// <param name="position"></param>
         public void Teleport(Vector3 position)
         {
+            if (body == null)
+                return;
+
             body.position = position;
-            velocity *= 0;
-            body.linearVelocity *= 0;
+
+            velocity = Vector2.zero;
+
+            body.linearVelocity =
+                Vector2.zero;
         }
 
         protected virtual void OnEnable()
         {
             body = GetComponent<Rigidbody2D>();
-            body.bodyType = RigidbodyType2D.Kinematic;
+
+            if (body != null)
+            {
+                body.bodyType =
+                    RigidbodyType2D.Kinematic;
+            }
         }
 
         protected virtual void OnDisable()
         {
-            body.bodyType = RigidbodyType2D.Dynamic;
+            if (body != null)
+            {
+                body.bodyType =
+                    RigidbodyType2D.Dynamic;
+            }
         }
 
         protected virtual void Start()
         {
             contactFilter.useTriggers = false;
-            contactFilter.SetLayerMask(Physics2D.GetLayerCollisionMask(gameObject.layer));
+
+            contactFilter.SetLayerMask(
+                Physics2D.GetLayerCollisionMask(
+                    gameObject.layer
+                )
+            );
+
             contactFilter.useLayerMask = true;
         }
 
         protected virtual void Update()
         {
             targetVelocity = Vector2.zero;
+
             ComputeVelocity();
         }
 
         protected virtual void ComputeVelocity()
         {
-
         }
 
         protected virtual void FixedUpdate()
         {
-            //if already falling, fall faster than the jump speed, otherwise use normal gravity.
-            if (velocity.y < 0)
-                velocity += gravityModifier * Physics2D.gravity * Time.deltaTime;
-            else
-                velocity += Physics2D.gravity * Time.deltaTime;
+            Health health =
+                GetComponent<Health>();
 
-            velocity.x = targetVelocity.x;
+            // Dead player does not move
+            if (
+                health != null &&
+                !health.IsAlive
+            )
+            {
+                velocity = Vector2.zero;
+                targetVelocity = Vector2.zero;
+
+                return;
+            }
+
+            if (body == null)
+                return;
+
+            // Apply gravity
+            Vector2 gravity =
+                Physics2D.gravity *
+                gravityModifier;
+
+            bool falling =
+                Vector2.Dot(
+                    velocity,
+                    gravity
+                ) > 0f;
+
+            if (falling)
+            {
+                velocity +=
+                    gravity *
+                    fallGravityMultiplier *
+                    Time.deltaTime;
+            }
+            else
+            {
+                velocity +=
+                    gravity *
+                    Time.deltaTime;
+            }
+
+            // Horizontal movement
+            velocity.x =
+                targetVelocity.x;
 
             IsGrounded = false;
 
-            var deltaPosition = velocity * Time.deltaTime;
+            Vector2 deltaPosition =
+                velocity *
+                Time.deltaTime;
 
-            var moveAlongGround = new Vector2(groundNormal.y, -groundNormal.x);
+            PerformMovement(
+                Vector2.right *
+                deltaPosition.x,
+                false
+            );
 
-            var move = moveAlongGround * deltaPosition.x;
-
-            PerformMovement(move, false);
-
-            move = Vector2.up * deltaPosition.y;
-
-            PerformMovement(move, true);
-
+            PerformMovement(
+                Vector2.up *
+                deltaPosition.y,
+                true
+            );
         }
 
-        void PerformMovement(Vector2 move, bool yMovement)
+        void PerformMovement(
+            Vector2 move,
+            bool yMovement
+        )
         {
-            var distance = move.magnitude;
+            float distance =
+                move.magnitude;
 
-            if (distance > minMoveDistance)
+            if (
+                distance >
+                minMoveDistance
+            )
             {
-                //check if we hit anything in current direction of travel
-                var count = body.Cast(move, contactFilter, hitBuffer, distance + shellRadius);
-                for (var i = 0; i < count; i++)
-                {
-                    var currentNormal = hitBuffer[i].normal;
+                int count =
+                    body.Cast(
+                        move,
+                        contactFilter,
+                        hitBuffer,
+                        distance +
+                        shellRadius
+                    );
 
-                    //is this surface flat enough to land on?
-                    if (currentNormal.y > minGroundNormalY)
+                for (
+                    int i = 0;
+                    i < count;
+                    i++
+                )
+                {
+                    Vector2 currentNormal =
+                        hitBuffer[i].normal;
+
+                    if (
+                        currentNormal.y *
+                        gravityModifier >
+                        minGroundNormalY
+                    )
                     {
                         IsGrounded = true;
-                        // if moving up, change the groundNormal to new surface normal.
+
                         if (yMovement)
                         {
-                            groundNormal = currentNormal;
+                            groundNormal =
+                                currentNormal;
+
                             currentNormal.x = 0;
                         }
                     }
+
                     if (IsGrounded)
                     {
-                        //how much of our velocity aligns with surface normal?
-                        var projection = Vector2.Dot(velocity, currentNormal);
+                        float projection =
+                            Vector2.Dot(
+                                velocity,
+                                currentNormal
+                            );
+
                         if (projection < 0)
                         {
-                            //slower velocity if moving against the normal (up a hill).
-                            velocity = velocity - projection * currentNormal;
+                            velocity -=
+                                projection *
+                                currentNormal;
                         }
                     }
-                    else
+                    else if (!yMovement)
                     {
-                        //We are airborne, but hit something, so cancel vertical up and horizontal velocity.
-                        velocity.x *= 0;
-                        velocity.y = Mathf.Min(velocity.y, 0);
+                        velocity.x = 0;
                     }
-                    //remove shellDistance from actual move distance.
-                    var modifiedDistance = hitBuffer[i].distance - shellRadius;
-                    distance = modifiedDistance < distance ? modifiedDistance : distance;
+
+                    float modifiedDistance =
+                        hitBuffer[i].distance -
+                        shellRadius;
+
+                    distance =
+                        Mathf.Min(
+                            modifiedDistance,
+                            distance
+                        );
                 }
             }
-            body.position = body.position + move.normalized * distance;
-        }
 
+            body.position +=
+                move.normalized *
+                distance;
+        }
     }
 }
